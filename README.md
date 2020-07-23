@@ -1,2 +1,2 @@
 # Olai Sin Side
-![OlaiSinSide](./bilder/olaisinside.png)
+![OlaiSinSide](./bilder/apple-touch-icon.png)
