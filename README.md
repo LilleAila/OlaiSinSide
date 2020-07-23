@@ -1,2 +1,2 @@
 # Olai Sin Side
-![OlaiSinSide](olaisinside.png)
+![OlaiSinSide](./bilder/olaisinside.png)
