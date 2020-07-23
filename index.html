@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="width">
+	<title>Olai sin side</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="w3.css">
+  <link rel="apple-touch-icon" href="./bilder/apple-touch-icon.png">
+  <link rel="icon" href="./bilder/apple-touch-icon.png">
+  <link rel="stylesheet" href="font.css">
+  <link rel="stylesheet" href="font2.css">
+	<script src="jquery.min.js">
+	</script>
+	<script src="script.js">
+	</script>
+	<script src="w3.js">
+	</script>
+</head>
+
+<body class="w3-animate-zoom" id="body">
+	<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none;animation:animatezoom 0.2s; position: relative;" id="mySidebar">
+		<div id="lx"><span id="l" onclick="loggut();w3_close()" class="w3-bar-item w3-blue w3-hover-orange w3-xlarge" style="cursor:pointer;text-align:left;">Logg ut</span><span id="x" onclick="w3_close()" class="w3-bar-item w3-xxlarge w3-orange w3-hover-blue" style="cursor:pointer;text-align:right;">&times;</span></div>
+    <a class="w3-bar-item w3-button" onclick="hjem();w3_close()">Hjem</a>
+    <a class="w3-bar-item w3-button" onclick="kalkulator();w3_close()">Kalkulator</a>
+    <a onclick="mus();w3_close()" class="w3-bar-item w3-button">Musikk</a>
+    <a class="w3-bar-item w3-button" onclick="skoleting();w3_close();">Skoleting</a>
+    <a class="w3-bar-item w3-button" onclick="spill();w3_close();">Spill</a>
+    <a class="w3-bar-item w3-button" onclick="startTime();klokke();w3_close();">Klokke</a>
+    <a class="w3-bar-item w3-button" onclick="wysi();w3_close();">Wysiwyg</a>
+    <a class="w3-bar-item w3-button" onclick="farge();w3_close();">Tom side</a>
+    <input class="w3-animate-opacity" type="color" value="#ffffff" id="color" style="cursor:pointer;" onchange="color()">
+    <div style="min-height:50px;"></div>
+    <a class="w3-bar-item w3-button w3-lime" onclick="location.reload();w3_close();" id="reload"><img src="bilder/reload.svg" class="w3-spin"></img></a>
+  </div>
+
+  <div class="w3-teal w3-animate-top w3-animate-zoom" style="display:none" id="header">
+    <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+    <div class="w3-container">
+      <h1 class="font">Olai sin side</h1>
+          </div>
+        </div>
+        <div id="login">
+          <div class="w3-container w3-blue">
+            <h2>Logg inn</h2>
+          </div>
+
+          <form class="w3-container" onsubmit="login();return false">
+            <p>
+            <label>Brukernavn:</label>
+            <input class="w3-input" type="text" id="bruker" placeholder="Brukernavn" contenteditable></p>
+            <p>
+            <label>Passord:</label>
+            <input class="w3-input" type="password" id="pass" placeholder="Passord" contenteditable></p>
+            <input type="submit" value="Logg inn" class="w3-button w3-teal" id="loginbtn">
+          </form>
+        </div>
+  <div id="hjem" class="w3-container w3-animate-zoom" style="display:none;">
+    <h2>Legg til&nbsp;<code class="w3-codespan w3-xlarge w3-hover-text-black" onclick="window.location.assign('?eruda=true')">/?eruda=true</code>&nbsp;etter linken for å slå på eruda og&nbsp;<code class="w3-codespan w3-xlarge w3-hover-text-black" onclick="window.location.assign('?eruda=false')">/?eruda=false</code>&nbsp;For å slå av eruda.</h2>
+    <br/>
+  </div>
+	<div id="Kalkulator" style="display:none" class="w3-animate-right w3-container">
+		<!--<input type="text" id="result" />
+      <br/>
+      <img src="./bilder/kalkulator.png" usemap="#image-map">
+
+      <map name="image-map">
+          <area value="c" onclick="clr()" coords="89,79,69" shape="circle">
+          <area value="/" onclick="dis('/')" coords="553,82,68" shape="circle">
+          <area value="*" onclick="dis('*')" coords="553,238,69" shape="circle">
+          <area value="-" onclick="dis('-')" coords="553,393,68" shape="circle">
+          <area value="+" onclick="dis('+')" coords="552,547,67" shape="circle">
+          <area type="button" value="=" onclick="solve()" coords="552,701,68" shape="circle">
+          <area value="." onclick="dis('.')" coords="399,700,69" shape="circle">
+          <area value="3" onclick="dis('3')" coords="398,544,67" shape="circle">
+          <area value="2" onclick="dis('2')" coords="242,547,67" shape="circle">
+          <area value="5" onclick="dis('5')" coords="243,391,66" shape="circle">
+          <area value="6" onclick="dis('6')" coords="399,390,68" shape="circle">
+          <area value="9" onclick="dis('9')" coords="397,235,66" shape="circle">
+          <area value="8" onclick="dis('8')" coords="241,235,68" shape="circle">
+          <area value="7" onclick="dis('7')" coords="88,238,70" shape="circle">
+          <area value="4" onclick="dis('4')" coords="88,390,71" shape="circle">
+          <area value="1" onclick="dis('1')" coords="89,546,69" shape="circle">
+          <area value="0" onclick="dis('0')" coords="68,642,33,663,22,703,33,741,65,764,123,769,165,769,203,770,236,770,270,765,294,746,308,723,310,700,308,681,294,658,279,645,255,636,200,634,140,635,98,636" shape="poly">
+      </map>-->
+		<table>
+			<tr>
+				<td colspan="3"><input type="text" id="result" /></td>
+                <!-- clr() function will call clr to clear all value -->
+                <td><input type="button" value="c" onclick="clr()" /> </td>
+            </tr>
+            <tr>
+                <!-- create button and assign value to each button -->
+                <!-- dis("1") will call function dis to display value -->
+                <td><input type="button" value="1" onclick="dis('1')" /> </td>
+                <td><input type="button" value="2" onclick="dis('2')" /> </td>
+                <td><input type="button" value="3" onclick="dis('3')" /> </td>
+                <td><input type="button" value="/" onclick="dis('/')" /> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="dis('4')" /> </td>
+                <td><input type="button" value="5" onclick="dis('5')" /> </td>
+                <td><input type="button" value="6" onclick="dis('6')" /> </td>
+                <td><input type="button" value="-" onclick="dis('-')" /> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="dis('7')" /> </td>
+                <td><input type="button" value="8" onclick="dis('8')" /> </td>
+                <td><input type="button" value="9" onclick="dis('9')" /> </td>
+                <td><input type="button" value="+" onclick="dis('+')" /> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="." onclick="dis('.')" /> </td>
+                <td><input type="button" value="0" onclick="dis('0')" /> </td>
+                <!-- solve function call function solve to evaluate value -->
+                <td><input type="button" value="=" onclick="solve()" /> </td>
+                <td><input type="button" value="*" onclick="dis('*')" /> </td>
+            </tr>
+        </table>
+    </div>
+    <div id="mus" style="display:none" class="w3-container w3-animate-right">
+      <select class="w3-select" id="select" onchange="changesrc()">
+        <option value="Velg en sang">Velg en sang</option>
+        <option value="Time leaper">Time leaper</option>
+        <option value="At the speed of light">At the speed of light</option>
+        <option value="Unity">Unity</option>
+        <option value="Press start">Press start</option>
+        <option value="Press start VIP mix">Press start VIP mix</option>
+        <option value="Press start derpcat">Press start Derpcat remix</option>
+      </select>
+      <br/>
+      <iframe id="musik" src=""></iframe>
+    </div>
+    <div id="skoleting" style="display:none;" class="w3-animate-opacity w3-animate-right">
+      <center><iframe src="https://skoleting.com"></iframe></center>
+    </div>
+    <div id="spill" style="display:none;" class="w3-animate-right">
+      <center>
+        <select class="w3-select" id="iframespill" onchange="iframespill()">
+          <option value="Velg spill">Velg spill</option>
+          <option value="Tileman.io">Tileman.io</option>
+          <option value="Wormate.io">Wormate.io</option>
+          <option value="Minecraft classic">Minecraft classic</option>
+          <option value="Super mario bros 3">Super mario bros 3</option>
+          <option value="Super mario 64">Super mario 64</option>
+          <option value="Lego batman">Lego batman</button>
+        </select>
+        <iframe src="" id="iframe22" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+      </center>
+    </div>
+    <h1 class="w3-container w3-animate-bottom" style="display:none;" id="klokke">Klokken er:&nbsp;<br/><span id="tid"></span></h1>
+    <div id="wysi" style="display:none;" class="w3-animate-right">
+      <!--<div id="toolbar">
+        <button class="w3-button" onclick="html()" id="btn">&lt;/&gt;</button>
+      </div>
+      <div id="text" contenteditable></div>
+      <div id="text2" contenteditable></div>-->
+      <iframe src="wysi.html"></iframe>
+    </div>
+    <div id="farge" style="display:none;" class="w3-animate-zoom">
+      <h1>Tom side</h1>
+    </div>
+    <script>
+      w3.includeHTML();
+    </script>
+  </body>
+</html>
